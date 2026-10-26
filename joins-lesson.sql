@@ -13,8 +13,9 @@ ps.patientid,
 ps.ward,
 h.hospital,
 ps.Tariff
-
-
+         COUNT(*) AS NumberOfPatients
+         SUM (ps.Tariff) AS TotalTariff
+         AVG(ps.Tariff) AS AverageTariff
 FROM     PatientStay AS ps
 
          DimHospital AS h
